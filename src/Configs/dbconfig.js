@@ -12,4 +12,4 @@ conn.connect(err => {
 	if(err) throw err
 })
 
-exports.conn
+module.exports = conn
