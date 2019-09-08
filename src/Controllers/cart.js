@@ -1,4 +1,4 @@
-const responses  = require('../Middleware/response')
+const responses  = require('../Helper/response')
 const cartModel = require('../Models/cart')
 
 const cart = {

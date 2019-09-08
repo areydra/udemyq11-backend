@@ -1,4 +1,4 @@
-const responses       = require('../Middleware/response')
+const responses       = require('../Helper/response')
 const categoriesModel = require('../Models/categories')
 
 const categories = {
