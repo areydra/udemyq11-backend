@@ -8,4 +8,5 @@ const response = {
 	}
 }
 
-exports.response
+module.exports = response
+
