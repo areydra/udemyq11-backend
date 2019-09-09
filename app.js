@@ -1,4 +1,4 @@
-require('dotenv/config')
+require('dotenv/config');
 const express = require('express')
 const logger  = require('morgan')
 const bodyParser = require('body-parser')
@@ -11,9 +11,12 @@ const port = process.env.PORT
 app.use(cors())
 app.use(logger('dev'))
 app.use(bodyParser.json())
+
 app.use(bodyParser.urlencoded({ extended:false }))
 app.use('/api', router)
 
 app.listen(port, () => {
 	console.log(`Server is running in port ${port}`)
 })
+
+// module.exports =app;
