@@ -41,12 +41,14 @@ const ratingController = {
                 return sum + num;
             }
             let total = data.reduce(sumOfArray);
-            let rating = total/data.length;
-            
+            let averageRating = total/data.length;
+    
+
             result = {
                 ...result, 
                 'listOfRating' :listOfRating,
-                'averageRating' :rating,
+                'totalRating' : data.length,
+                'averageRating' :averageRating,
             }
             formResponse.success(res, 200, result);
         })
