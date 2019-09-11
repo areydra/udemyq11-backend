@@ -3,7 +3,7 @@ const conn = require('../Configs/dbconfig')
 const wishlist = {
     getWishlist : id_user => {
         return new Promise((resolve, reject) => {
-            conn.query(`SELECT wishlist.*, courses.title FROM wishlist INNER JOIN courses ON wishlist.id_course=courses.id WHERE wishlist.id_user = ?`, [id_user], (err, res) => {
+            conn.query(`SELECT wishlist.*, courses.title, courses.image, courses.price FROM wishlist INNER JOIN courses ON wishlist.id_course=courses.id WHERE wishlist.id_user = ?`, [id_user], (err, res) => {
                 (!err) ? resolve(res) : reject(err)
             })
         })

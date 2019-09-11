@@ -27,7 +27,9 @@ const course = {
 
     getCourseDetails: id_course => {
         return new Promise((resolve, reject) => {
+
             conn.query('SELECT courses.*, users.name FROM courses INNER JOIN users ON courses.id_instructor=users.id WHERE courses.id = ?', [id_course], (err, res) => {
+
                 (!err) ? resolve(res): reject(err)
             })
         })
