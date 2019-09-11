@@ -3,7 +3,7 @@ const conn = require('../Configs/dbconfig')
 const cart = {
     getCart : id_user => {
         return new Promise((resolve, reject) => {
-            conn.query(`SELECT cart.*, courses.title FROM cart INNER JOIN courses ON cart.id_course=courses.id WHERE cart.id_user = ?`, [id_user], (err, res) => {
+            conn.query(`SELECT cart.*, courses.title, courses.price FROM cart INNER JOIN courses ON cart.id_course=courses.id WHERE cart.id_user = ?`, [id_user], (err, res) => {
                 (!err) ? resolve(res) : reject(err)
             })
         })
