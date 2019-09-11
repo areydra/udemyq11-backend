@@ -18,6 +18,14 @@ const course = {
         })
     },
 
+    getCoursesPage: (req, res) => {
+        courseModel.getCoursesPage(req.params.offset, req.params.limit).then(response => {
+            responses.success(res, 200, response)
+        }).catch(err => {
+            console.log(err)
+        })
+    },
+
     getCourseDetails: async (req, res) => {
         courseModel.getCourseDetails(req.params.id_course).then(responseCourse => {
             courseModel.getSection(responseCourse[0].id).then(async responseSection => {

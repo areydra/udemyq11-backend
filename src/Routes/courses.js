@@ -4,6 +4,7 @@ const course = require('../Controllers/course')
 
 router
     .get('/', course.getCourses)
+    .get('/:offset/:limit', course.getCoursesPage)
     .get('/:id_course', course.getCourseDetails)
     .get('/search/:name_course', course.searchCourse)
     .get('/instructor/:id_instructor', course.getCourseInstructor)
